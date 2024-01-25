@@ -1,0 +1,20 @@
+/*
+    Author: Dylan Liesenfelt
+    Date:  , 2024
+    Program: 
+    File: .cpp
+    This program prompts thereturns user for the length of a square and  the width
+*/
+
+#include <iostream>
+
+using namespace std;
+
+//declares main function of the program
+int main() {
+    
+    
+
+
+    return 0;
+}
