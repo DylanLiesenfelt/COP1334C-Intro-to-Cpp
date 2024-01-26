@@ -60,16 +60,16 @@ int main() {
     cout << "Quantity:        " << numberOfShares << " shares." << endl << endl;
 
     //Calcs then displays the entry cost of the trade
-    totalCost = numberOfShares * costPerShareBuy;
+    totalCost = numberOfShares * costPerShareBuy + (numberOfShares * costPerShareBuy * COMMISSION_RATE);
     cout << "Total Cost:      " << "$" <<totalCost;
 
     //Calcs then displays the exit proceeds of the trade
-    totalProceeds = numberOfShares * pricePerShareSell;
+    totalProceeds = numberOfShares * pricePerShareSell - (numberOfShares * pricePerShareSell * COMMISSION_RATE);
     cout << endl <<"Total Proceeds:  " << "$" << totalProceeds;
 
     //Calcs the entry commission and exit commission and displays the total commission
-    commissonAtBuy = totalCost * COMMISSION_RATE;
-    commissonAtSell = totalProceeds * COMMISSION_RATE;
+    commissonAtBuy = numberOfShares * costPerShareBuy * COMMISSION_RATE;
+    commissonAtSell = numberOfShares * pricePerShareSell * COMMISSION_RATE;
     totalCommisson = commissonAtBuy + commissonAtSell;
     cout << endl << "Commission:      " << "$" << totalCommisson;
 
