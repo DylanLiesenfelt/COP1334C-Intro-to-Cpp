@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 int main()
@@ -22,7 +23,7 @@ int main()
     cout << "Enter rainfall for " << month3 << ": ";
     cin >> rain3;
 
-    cout << "The average rainfall for " << month1 << ", " << month2 << ", and" << month3 << " is " << (rain1 + rain2 + rain3) / 3 << " inches.";
+    cout << "The average rainfall for " << month1 << ", " << month2 << ", and " << month3 << " is " << setprecision(3)<<(rain1 + rain2 + rain3) / 3 << " inches.";
 
     return 0;
 }
