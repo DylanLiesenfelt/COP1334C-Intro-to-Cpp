@@ -26,7 +26,7 @@ int main() {
     
     //Header information
     cout << "Loan Payment Calculator ..." << endl << endl;
-    cout"Please enter the following information:" << endl << endl;
+    cout << "Please enter the following information:" << endl << endl;
 
     // ---------- INPUTS ----------
     //User input for the user's name, assigns it to var borrowerName

@@ -22,10 +22,49 @@ using namespace std;
 //declares main function of the program
 int main() {
     
-    int number;
+    int number = 0;
 
-    cout << "Enter a number in the range 1 through 10.";
+    cout << "Enter a number (1 - 10): ";
     cin >> number;
+
+    if (number >=  1 && number <= 10) {
+        switch (number) {
+            case 1:
+                cout << "The Roman numeral version of " << number << " is I.";
+                break;
+            case 2:
+                cout << "The Roman numeral version of " << number << " is II.";
+                break;
+            case 3:
+                cout << "The Roman numeral version of " << number << " is III.";
+                break;
+            case 4:
+                cout << "The Roman numeral version of " << number << " is IV.";
+                break;
+            case 5:
+                cout << "The Roman numeral version of " << number << " is V.";
+                break;
+            case 6:
+                cout << "The Roman numeral version of " << number << " is VI.";
+                break;
+            case 7:
+                cout << "The Roman numeral version of " << number << " is VII.";
+                break;
+            case 8:
+                cout << "The Roman numeral version of " << number << " is VIII.";
+                break;
+            case 9:
+                cout << "The Roman numeral version of " << number << " is IX.";
+                break;
+            case 10:
+                cout << "The Roman numeral version of " << number << " is X.";
+                break;      
+        }
+    }
+
+    else {
+        cout << "Enter a number in the range 1 through 10.";
+    }
 
 
     return 0;
