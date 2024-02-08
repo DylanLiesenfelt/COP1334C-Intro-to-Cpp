@@ -5,8 +5,9 @@
     File: .cpp
     This program prompts thereturns user for the length of a square and  the width
 */
-
 #include <iostream>
+#include <string>
+#include <iomanip>
 
 using namespace std;
 
