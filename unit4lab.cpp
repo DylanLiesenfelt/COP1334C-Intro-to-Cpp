@@ -35,8 +35,8 @@ int main() {
         if (dataUsage >= 0) {
             switch (packageChoice) {
                 case 1:
-                    if (PLAN_A_DATA_CAP > dataUsage) {
-                        total = PLAN_A_COST + ((PLAN_A_DATA_CAP - dataUsage) * PLAN_A_ADDITONAL_COST);
+                    if (PLAN_A_DATA_CAP < dataUsage) {
+                        total = PLAN_A_COST + ((dataUsage - PLAN_A_DATA_CAP) * PLAN_A_ADDITONAL_COST);
                         cout << endl << endl << totalPrint << fixed << setprecision(2) << total;
                         break;
                     }
@@ -48,8 +48,8 @@ int main() {
                     }
                 
                 case 2:
-                    if (PLAN_B_DATA_CAP > dataUsage) {
-                        total = PLAN_B_COST + ((PLAN_B_DATA_CAP - dataUsage) * PLAN_B_ADDITONAL_COST);
+                    if (PLAN_B_DATA_CAP < dataUsage) {
+                        total = PLAN_B_COST + ((dataUsage - PLAN_B_DATA_CAP) * PLAN_B_ADDITONAL_COST);
                         cout << endl << endl << totalPrint << fixed << setprecision(2) << total;
                         break;
                     }
