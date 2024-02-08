@@ -14,8 +14,6 @@ Enter a number (1 - 10): 12
 Enter a number in the range 1 through 10.*/
 
 #include <iostream>
-#include <string>
-#include <iomanip>
 
 using namespace std;
 
