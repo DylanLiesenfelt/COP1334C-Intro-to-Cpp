@@ -27,10 +27,14 @@ int main() {
     cout << "Package: ";
     cin >> packageChoice;
 
-    cout << endl << "How many gigabytes of data were used? ";
-    cin >> dataUsage;
+    if (packageChoice != 1 && packageChoice != 2 && packageChoice != 3) {
+        cout << endl << "Error ... Invalid package. Try again.";
+    }
 
-    if (packageChoice >=1 && packageChoice <= 3) {
+    else {
+
+        cout << endl << "How many gigabytes of data were used? ";
+        cin >> dataUsage;
 
         if (dataUsage >= 0) {
             switch (packageChoice) {
@@ -72,10 +76,6 @@ int main() {
             cout << endl << "Error ... Invalid gigabytes entered. Try Again.";
         }
 
-    }
-
-    else {
-        cout << endl << "Error ... Invalid package. Try again.";
     }
 
     return 0;
