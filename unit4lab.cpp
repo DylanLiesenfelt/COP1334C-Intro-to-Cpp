@@ -1,3 +1,15 @@
+/*
+    Author: Dylan Liesenfelt
+    Date: Febuary 14th, 2024
+    Program: iMobile bill calculator
+    File: iMobile.cpp
+
+    This program prompts the user to input thier package and how much data they used during the billing cycle.
+    It checks to make sure that those inputs are valid, if they are not valid displays error message.
+    After this based on the user input calculates the total amount for thier bill during that billing cycle.
+
+*/
+
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -26,7 +38,7 @@ int main() {
     cout << "iMobile Bill Calculator ..." << endl << endl;
     //menu display with directory options
     cout << "Select a subscription package:";
-    cout << endl <<setw(20) << "1. Package A" << endl;
+    cout << endl << setw(20) << "1. Package A" << endl;
     cout << setw(20) << "2. Package B" << endl;
     cout << setw(20) << "3. Package C" << endl;
     cout << "Package: ";
