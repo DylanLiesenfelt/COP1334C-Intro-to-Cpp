@@ -47,7 +47,7 @@ int main() {
 
     //input validation for packageChoice: checks if 1,2,3 is not user input display error message
     if (packageChoice != 1 && packageChoice != 2 && packageChoice != 3) {
-        cout << endl << "Error ... Invalid package. Try again.";
+        cout << "Error ... Invalid package. Try again.";
     }
 
     //input is valid continues here
@@ -113,7 +113,7 @@ int main() {
 
         //if dataUsage is invalid continues here, displays error message
         else {
-            cout << endl << "Error ... Invalid gigabytes entered. Try Again.";
+            cout << "Error ... Invalid gigabytes entered. Try Again.";
         }
     }
 
