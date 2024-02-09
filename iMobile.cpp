@@ -70,7 +70,7 @@ int main() {
                         //calculates bill total: base plan cost + (data used over the cap * the cost per GBs over data cap)
                         total = PLAN_A_COST + ((dataUsage - PLAN_A_DATA_CAP) * PLAN_A_ADDITONAL_COST);
                         //displays total bill amount
-                        cout << endl << endl << totalPrint << fixed << setprecision(2) << total;
+                        cout << endl << totalPrint << fixed << setprecision(2) << total;
                         break;
                     }
                     //if not over the packages data cap
@@ -78,7 +78,7 @@ int main() {
                         //updates total to base package cost
                         total = PLAN_A_COST;
                         //displays total bill amount
-                        cout << endl << endl << totalPrint << fixed << setprecision(2) << total;
+                        cout << endl << totalPrint << fixed << setprecision(2) << total;
                         break;
                     }
 
@@ -89,7 +89,7 @@ int main() {
                         //calculates bill total: base plan cost + (data used over the cap * the cost per GBs over data cap)
                         total = PLAN_B_COST + ((dataUsage - PLAN_B_DATA_CAP) * PLAN_B_ADDITONAL_COST);
                         //displays total bill amount
-                        cout << endl << endl << totalPrint << fixed << setprecision(2) << total;
+                        cout << endl << totalPrint << fixed << setprecision(2) << total;
                         break;
                     }
 
@@ -97,7 +97,7 @@ int main() {
                         //updates total to base package cost
                         total = PLAN_B_COST;
                         //displays total bill amount
-                        cout << endl << endl << totalPrint << fixed << setprecision(2) << total;
+                        cout << endl << totalPrint << fixed << setprecision(2) << total;
                         break;
                     }
 
@@ -106,7 +106,7 @@ int main() {
                     //package C has unlimited data, no additional cost total updates to base plan cost
                     total = PLAN_C_COST;
                     //displays total bill amount
-                    cout << endl << endl << totalPrint << fixed << setprecision(2) << total;
+                    cout << endl << totalPrint << fixed << setprecision(2) << total;
                     break;
             }
         }
