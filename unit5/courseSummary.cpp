@@ -1,7 +1,7 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <iomanip>
-#include <cmath>
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int main() {
 
     /*---------- VARIABLES -------------*/
     int option = 0, repeat = 1;
-    string file = "", headerLine = "----------------------------------------";
+    string fileName = "", headerLine = "----------------------------------------";
     
     /*----------- INPUT SECTION -----------*/
     cout << endl << "Course Summary App ..." << endl << endl;
@@ -23,7 +23,7 @@ int main() {
         cout << "Option: ";
         cin >> option;
     
-        while (option <= 0 & option >= 3)
+        while (option <= 0 && option >= 3)
         {
             cout << endl << endl << "Error ... Incorrect option. Try Again" << option << endl << endl;
             cout << "Choose one of the following options" << endl;
@@ -40,16 +40,26 @@ int main() {
             case 1:
                 cout << endl << endl << "Grades Summary Report ..." << endl << endl;
                 cout << "Enter name of file: ";
-                cin >> file;
+                cin >> fileName;
+                
+                ifstream inputFile;
+                inputFile.open(fileName);
+                
                 cout << endl << endl << headerLine << endl << endl;
-                break;
-            
-            case 2: 
-                cout << endl << "Good Bye ...";
-                repeat = 0;
-                option = 0;
+                string course;
+
+                inputFile >> course;
+                cout << course << fileName << endl << endl;
+
+
+
                 break;
         }
+        //     case 2: 
+        //         cout << endl << "Good Bye ...";
+        //         repeat = 0;
+        //         break;
+        // }
     }
     
     
