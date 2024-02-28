@@ -29,6 +29,7 @@ int main() {
         cout << setw(15) << right << "2. Quit" << endl;
         cout << "Option: ";
         cin >> option;
+        cin.ignore();
     
         while (option <= 0 && option >= 3)
         {
@@ -38,6 +39,8 @@ int main() {
             cout << setw(15) << "2. Quit" << endl;
             cout << "Option: ";
             cin >> option;
+            cin.ignore();
+
         };
 
         /*------------ OUTPUT SECTION ------------*/
@@ -46,7 +49,6 @@ int main() {
             case 1:
                 cout << endl << endl << "Grades Summary Report ..." << endl << endl;
                 cout << "Enter name of file: ";
-                cin.ignore();
                 getline(cin, fileName);
 
                 if (!infile) {
