@@ -10,9 +10,10 @@ int main() {
 
     /*---------- VARIABLES -------------*/
     int option = 0, repeat = 1;
-    string fileName = "", headerLine = "----------------------------------------";
-    string course;
-    ifstream inputFile;
+    string fileName, headerLine = "----------------------------------------";
+    string courseID, course, professor, term, name;
+    int grade = 0, gradeMax = 0, gradeMin = 0, studentCount = 0; 
+    fstream inputFile;
 
     
     /*----------- INPUT SECTION -----------*/
@@ -45,13 +46,20 @@ int main() {
                 cout << "Enter name of file: ";
                 cin >> fileName;
                 
-                inputFile.open(fileName);
+                // inputFile.open(fileName);
+                // while (!fileName.is_open())
+                // {
+                //     cout << "ERROR"; 
+                // }
                 
                 cout << endl << endl << headerLine << endl << endl;
                 
+                inputFile >> courseID >> course >> professor >> term ;
+                cout << courseID <<  course  << endl << endl;
+                cout << setw(20) << left << professor << setw(20) << right << term << endl << endl << endl;
 
-                inputFile >> course;
-                cout << course << fileName << endl << endl;
+                cout << "List of Students" << endl << headerLine << endl;
+
                 break;
         
             case 2: 
