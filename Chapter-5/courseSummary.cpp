@@ -50,12 +50,14 @@ int main() {
                 cout << endl << endl << "Grades Summary Report ..." << endl << endl;
                 cout << "Enter name of file: ";
                 getline(cin, fileName);
+                infile.open(fileName);
 
                 if (!infile) {
                     cout << "ERROR";
                 }
                 
                 cout << endl << endl << headerLine << endl << endl;
+
                 
                 infile >> courseID >> course >> professor >> term ;
                 cout << courseID <<  course  << endl << endl;
