@@ -10,10 +10,13 @@ int main() {
 
     /*---------- VARIABLES -------------*/
     int option = 0, repeat = 1;
+
     string fileName, headerLine = "----------------------------------------";
+
     string courseID, course, professor, term, name;
     int grade = 0, gradeMax = 0, gradeMin = 0, studentCount = 0; 
-    fstream inputFile;
+
+    ifstream infile;
 
     
     /*----------- INPUT SECTION -----------*/
@@ -35,7 +38,6 @@ int main() {
             cout << setw(15) << "2. Quit" << endl;
             cout << "Option: ";
             cin >> option;
-
         };
 
         /*------------ OUTPUT SECTION ------------*/
@@ -44,17 +46,16 @@ int main() {
             case 1:
                 cout << endl << endl << "Grades Summary Report ..." << endl << endl;
                 cout << "Enter name of file: ";
-                cin >> fileName;
-                
-                // inputFile.open(fileName);
-                // while (!fileName.is_open())
-                // {
-                //     cout << "ERROR"; 
-                // }
+                cin.ignore();
+                getline(cin, fileName);
+
+                if (!infile) {
+                    cout << "ERROR";
+                }
                 
                 cout << endl << endl << headerLine << endl << endl;
                 
-                inputFile >> courseID >> course >> professor >> term ;
+                infile >> courseID >> course >> professor >> term ;
                 cout << courseID <<  course  << endl << endl;
                 cout << setw(20) << left << professor << setw(20) << right << term << endl << endl << endl;
 
