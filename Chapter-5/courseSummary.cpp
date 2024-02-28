@@ -11,6 +11,9 @@ int main() {
     /*---------- VARIABLES -------------*/
     int option = 0, repeat = 1;
     string fileName = "", headerLine = "----------------------------------------";
+    string course;
+    ifstream inputFile;
+
     
     /*----------- INPUT SECTION -----------*/
     cout << endl << "Course Summary App ..." << endl << endl;
@@ -18,8 +21,8 @@ int main() {
     while (repeat == 1)
     {
         cout << "Choose one of the following options" << endl;
-        cout << setw(20) << "1. Process Grades Summary report." << endl;
-        cout << setw(20) << "2. Quit" << endl;
+        cout << setw(41) << right << "1. Process Grades Summary report." << endl;
+        cout << setw(15) << right << "2. Quit" << endl;
         cout << "Option: ";
         cin >> option;
     
@@ -27,8 +30,8 @@ int main() {
         {
             cout << endl << endl << "Error ... Incorrect option. Try Again" << option << endl << endl;
             cout << "Choose one of the following options" << endl;
-            cout << setw(20) << "1. Process Grades Summary report." << endl;
-            cout << setw(20) << "2. Quit" << endl;
+            cout << setw(41) << "1. Process Grades Summary report." << endl;
+            cout << setw(15) << "2. Quit" << endl;
             cout << "Option: ";
             cin >> option;
 
@@ -42,36 +45,21 @@ int main() {
                 cout << "Enter name of file: ";
                 cin >> fileName;
                 
-                ifstream inputFile;
                 inputFile.open(fileName);
                 
                 cout << endl << endl << headerLine << endl << endl;
-                string course;
+                
 
                 inputFile >> course;
                 cout << course << fileName << endl << endl;
-
-
-
+                break;
+        
+            case 2: 
+                cout << endl << "Good Bye ...";
+                repeat = 0;
                 break;
         }
-        //     case 2: 
-        //         cout << endl << "Good Bye ...";
-        //         repeat = 0;
-        //         break;
-        // }
     }
-    
-    
-    
-    
-    
-    
-    
-
-    
-
-
 
     return 0;
 }
