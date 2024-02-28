@@ -35,7 +35,7 @@ int main() {
         cin.ignore();
 
         cout << endl << "Writing " << name << " and grade: " << grade << " to file." << endl << endl;
-        outfile << name << grade;
+        outfile << "Name: " << name  << ", Grade: " << grade << "\n";
     }
 
     outfile.close();
