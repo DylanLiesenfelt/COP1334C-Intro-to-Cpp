@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cmath>
 #include <string>
 #include <iomanip>
 
@@ -13,8 +14,9 @@ int main() {
 
     string fileName, headerLine = "--------------------------------------------------";
 
-    string courseID, dash, intro, to, c, program, prof, profFName, profLName, term, year;
-    int grade = 0, gradeMax = 0, gradeMin = 0, studentCount = 0; 
+    string courseID, dash, intro, to, c, program, prof, profFName, profLName, term, year, firstName, lastName;
+    int grade = 0, gradeMax = 0, gradeMin = 0, gradeTotal = 0, studentCount = 0;
+    double gradeAvg = 0.0; 
 
     ifstream infile;
 
@@ -64,6 +66,29 @@ int main() {
                 cout << setw(20) << left << prof  + " " + profFName+ " " + profLName  << setw(19) << right << "Term: " << term + " "  << year << endl << endl << endl;
 
                 cout << "List of Students" << endl << headerLine << endl << endl;
+
+                while (infile)
+                {
+                    infile >> firstName >> lastName >> grade;
+                    cout << firstName + " " + lastName << setw(20) << right << grade << endl;
+                    if (grade > gradeMax)
+                    {
+                        grade = gradeMax;
+                    }
+                    if (grade < gradeMin)
+                    {
+                        grade = gradeMin;
+                    }
+                    studentCount++;
+                    gradeTotal += grade;
+                }
+
+                cout << "Highest Grade: " << gradeMax << endl;
+                cout << "Lowest Grade: " << gradeMin << endl;
+                gradeAvg = (gradeAvg/studentCount);
+                cout << "Average Grade: " << gradeAvg << endl << endl;
+                
+                infile.close();
 
                 break;
         
