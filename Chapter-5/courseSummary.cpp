@@ -11,9 +11,9 @@ int main() {
     /*---------- VARIABLES -------------*/
     int option = 0, repeat = 1;
 
-    string fileName, headerLine = "----------------------------------------";
+    string fileName, headerLine = "--------------------------------------------------";
 
-    string courseID, course, professor, term, name;
+    string courseID, dash, intro, to, c, program, prof, profFName, profLName, term, year;
     int grade = 0, gradeMax = 0, gradeMin = 0, studentCount = 0; 
 
     ifstream infile;
@@ -59,11 +59,11 @@ int main() {
                 cout << endl << endl << headerLine << endl << endl;
 
                 
-                infile >> courseID >> course >> professor >> term ;
-                cout << courseID <<  course  << endl << endl;
-                cout << setw(20) << left << professor << setw(20) << right << term << endl << endl << endl;
+                infile >> courseID >> dash >> intro >> to >> c >> program >> prof >> profFName >> profLName >> term >> year;
+                cout << courseID + " " <<  dash + " " << intro + " " << to + " " << c + " " << program + " " << endl << endl;
+                cout << setw(20) << left << prof  + " " + profFName+ " " + profLName  << setw(19) << right << "Term: " << term + " "  << year << endl << endl << endl;
 
-                cout << "List of Students" << endl << headerLine << endl;
+                cout << "List of Students" << endl << headerLine << endl << endl;
 
                 break;
         
