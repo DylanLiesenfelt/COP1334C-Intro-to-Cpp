@@ -56,6 +56,7 @@ int main() {
 
                 if (!infile) { //Input validation, if user input file does not exist displays error, breaks out of switch statment returns user to main menu.
                     cout << "Error ... Cannot open " << fileName + "." << endl << endl;
+                    break;
                 }
 
                 //------------- PROCESSING ------------
