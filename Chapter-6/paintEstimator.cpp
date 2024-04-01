@@ -13,20 +13,23 @@
 
 using namespace std;
 
-
+/*----------Prototypes----------*/
 double getPricePerGallon();
 int getRooms();
 int calcWallSpace(int rooms);
 void calcPaint(int sqrFeet, double pricePaint, int &gallons, double &costPaint);
 void calcLabor(int sqrFeet, double &hours, double &costLabor);
 
+/*----------Main Function-------------*/
 int main() {
     cout << "Paint Job Estimator ..." << endl << endl;
-
+    
+    //Calling the input functions
     double pricePaint = getPricePerGallon();
     int rooms = getRooms();
     int sqrFeet = calcWallSpace(rooms);
 
+    //Processing the inpust for the esatimate
     int gallons;
     double costPaint;
     calcPaint(sqrFeet, pricePaint, gallons, costPaint);
@@ -37,6 +40,7 @@ int main() {
 
     double totalCost = costPaint + costLabor;
 
+    // Diplaying the estimate
     cout << endl << endl << setw(25) << "Paint Job Estimate" << endl;
     cout << endl << "Paint ..." << endl;
     cout << setw(15) << left << "Gallons of Paint:" << right << setw(12) << gallons << endl;
@@ -51,6 +55,9 @@ int main() {
     return 0;
 }
 
+/*--------------Functions---------------*/
+
+// Takes price of paint from user, performs input validation
 double getPricePerGallon() {
     double price;
     cout << "Price per gallon of paint (>=0): ";
@@ -63,6 +70,7 @@ double getPricePerGallon() {
     return price;
 }
 
+// Takes number of rooms from the user, performs input validation
 int getRooms() {
     int rooms;
     cout << endl << "Number of rooms to be painted (>=1): ";
@@ -75,6 +83,8 @@ int getRooms() {
     return rooms;
 }
 
+/* Calcs square footage of the job based off of number of rooms given by user
+and input from the user on the sqFt of each room, performs input validation */
 int calcWallSpace(int rooms) {
     int sqrFeet = 0;
     cout << endl << "Square feet of wall space (>=25)" << endl;
@@ -92,11 +102,13 @@ int calcWallSpace(int rooms) {
     return sqrFeet;
 }
 
+// Calcs how many gallons of paint needed and the price of the total cost of the paint for the job. 
 void calcPaint(int sqrFeet, double pricePaint, int &gallons, double &costPaint) {
     gallons = sqrFeet / 115 + (sqrFeet % 115 != 0);
     costPaint = gallons * pricePaint;
 }
 
+// Calcs how many hours of labor needed  and the total cost of the labor for the job.
 void calcLabor(int sqrFeet, double &hours, double &costLabor) {
     hours = (sqrFeet / 115.0) * 8.0;
     costLabor = hours * 25.0;
