@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <cmath>
+#include <fstream>
 
 using namespace std;
 
@@ -31,10 +31,12 @@ int main() {
         ageList[i] = age;
         nameList[i] = name;
     }
+
+    ofstream outputFile("studentdata.txt");
     
-    cout << setw(10) << left << "Name" << setw(10) << right << "Age" << endl;
+    outputFile << setw(10) << left << "Name" << setw(10) << right << "Age" << endl;
     for (int j = 0; j < numberOfStudents; j++) {
-        cout << setw(10) << left << nameList[j] << setw(10) << right << ageList[j] << endl;
+        outputFile << setw(10) << left << nameList[j] << setw(10) << right << ageList[j] << endl;
     }
     
     for (int k = 0; k < numberOfStudents; k++) {
@@ -42,7 +44,9 @@ int main() {
     }
 
     int avgAge = total/numberOfStudents;
-    cout << "Average Age: " << avgAge;
+    outputFile << "Average Age: " << avgAge;
+
+    outputFile.close();
 
     return 0;
 }
