@@ -10,24 +10,39 @@
 using namespace std;
 
 int main() {
-    int students = 0;
-
-
+    int numberOfStudents = 0, age = 0, total = 0;
+    string name; 
+    
     cout << "Enter the number of Students: ";
-    cin >> students;
+    cin >> numberOfStudents;
     cin.ignore();
 
-    for (int i = 0; i < students; i++) {
-        cout << "Enter Student Name: ";
-        cin.getline(name);
-        
-        cout >> "Enter Student Age: ";
-        cin << age;
+    int ageList[numberOfStudents];
+    string nameList[numberOfStudents];
 
-        l
+    for (int i = 0; i < numberOfStudents; i++) {
+        cout << "Enter Student Name: ";
+        getline(cin, name);
+        
+        cout << "Enter Student Age: ";
+        cin >> age;
+        cin.ignore();
+
+        ageList[i] = age;
+        nameList[i] = name;
+    }
+    
+    cout << setw(10) << left << "Name" << setw(10) << right << "Age" << endl;
+    for (int j = 0; j < numberOfStudents; j++) {
+        cout << setw(10) << left << nameList[j] << setw(10) << right << ageList[j] << endl;
+    }
+    
+    for (int k = 0; k < numberOfStudents; k++) {
+        total += ageList[k];
     }
 
-
+    int avgAge = total/numberOfStudents;
+    cout << "Average Age: " << avgAge;
 
     return 0;
 }
