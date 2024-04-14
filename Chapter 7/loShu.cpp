@@ -90,7 +90,7 @@ void makeSquare(int arr[]) {
     }
 
     else {
-        cout << endl << " Sorry ... this is not a Lo Sho Square" << endl << endl;
+        cout << endl << "Sorry ... this is not a Lo Sho Square" << endl << endl;
     }
 } 
 
@@ -98,41 +98,43 @@ void makeSquare(int arr[]) {
 //declares main function of the program
 int main() {
 
-    cout << "Creating Lo Shu Square ..." << endl << endl;
+    char playAgain = 'y';
 
-    cout << "Enter Nine Numbers (1-9)" << endl;
-    for (int i = 0; i < 9; i++){
-        cout << setw(15) << right << "Number " << (i+1) << ": ";
-        cin >> inputNumber;
+    while (playAgain == 'y' || playAgain == 'Y'){
+        cout << "Creating Lo Shu Square ..." << endl << endl;
 
-        while (inputNumber < 1 || inputNumber > 9) {
-            cout << setw(43) << right << "Error ... Invalid number. Try again" << endl << endl;
-            cin.ignore();
+        cout << "Enter Nine Numbers (1-9)" << endl;
+        for (int i = 0; i < 9; i++){
             cout << setw(15) << right << "Number " << (i+1) << ": ";
             cin >> inputNumber;
-        }
 
-        inArray = arrayCheck(inputNumber, numberArray, i);
-        while (inArray == true)
-        {
-            cout << setw(18) << right << "Error ... " << inputNumber << " is already in the Lo Shu Square. Try Again" << endl << endl;
-            cin.ignore();
-            cout << setw(15) << right << "Number " << (i+1) << ": ";
-            cin >> inputNumber;
+            while (inputNumber < 1 || inputNumber > 9) {
+                cout << setw(43) << right << "Error ... Invalid number. Try again" << endl << endl;
+                cin.ignore();
+                cout << setw(15) << right << "Number " << (i+1) << ": ";
+                cin >> inputNumber;
+            }
+
             inArray = arrayCheck(inputNumber, numberArray, i);
-        }
+            while (inArray == true) {
+                cout << setw(18) << right << "Error ... " << inputNumber << " is already in the Lo Shu Square. Try Again" << endl << endl;
+                cin.ignore();
+                cout << setw(15) << right << "Number " << (i+1) << ": ";
+                cin >> inputNumber;
+                inArray = arrayCheck(inputNumber, numberArray, i);
+            }
         
-        numberArray[i] = inputNumber;
-        cin.ignore();
+            numberArray[i] = inputNumber;
+            cin.ignore();
+        }   
+
+        //OUTPUTS
+        cout << endl;
+        makeSquare(numberArray);
+
+        cout << "Would you like to try again (y/n)? ";
+        cin >> playAgain;
     }
-
-    //OUTPUTS
-
-    cout << endl;
-
-    makeSquare(numberArray);
-
-
 
     return 0;
 }
