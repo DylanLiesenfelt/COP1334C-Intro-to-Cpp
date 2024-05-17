@@ -6,25 +6,22 @@
 using namespace std;
 
 // declares main function of the program
-int main()
-{
-    int num = 0, count = 1;
 
-    cout << "number of";
-    cin >> num;
+int main() {
+    double APY = 778.69, balance = 700.00, payment = 391.62, difference = 0.00, inter = 0.00;
+    int payCount = 0;
 
-    while (num != count)
-    {
-        if ()
-        {
-            /* code */
-        }
-        
-        cout << count << endl;
+    // Convert APY to monthly interest rate
+    double monthlyInterestRate = APY / (12 * 100);
 
-        count++;
+    while (payCount < 9) {
+        inter = balance * monthlyInterestRate;
+        balance += inter; // Add interest
+        balance -= payment; // Subtract payment
+        payCount++;
+        cout << "Payments: " << payCount << endl;
+        cout << "Balance: " << balance << endl << endl;
     }
-    
 
     return 0;
 }
